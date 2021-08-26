@@ -2,8 +2,8 @@
 
 return array(
     'controllers' => array(
-        'invokables' => array(
-            'Blog\Controller\List' => 'Blog\Controller\ListController',
+        'factories' => array(
+            'Blog\Controller\List' => 'Blog\Factory\ListControllerFactory',
         )
     ),
     'router' => array(
@@ -25,4 +25,9 @@ return array(
             __DIR__ . '/../view',
         ),
     ),
+    'service_manager' => array(
+        'invokables' => array(
+            'Blog\Service\PostServiceInterface' => 'Blog\Service\PostService',
+        )
+    )
 );
